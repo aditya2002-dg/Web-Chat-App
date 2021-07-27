@@ -1,0 +1,92 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+  <link rel="stylesheet" href="style.css">
+  <title>Lightning Chat App</title>
+</head>
+
+<body>
+  <!-- container & title-->
+  <div class="container my-4">
+    <h1 class="my-4 text-center">Lightning Chat App</h1>
+  </div>
+
+
+  <!--buttons for chatrooms-->
+  <div class="chat-rooms mb-3 text-center">
+    <div class="my-2 room">Choose a Chatroom:</div>
+    <button class="btn" id="general">#general</button>
+    <button class="btn" id="gaming">#gaming</button>
+    <button class="btn" id="coding">#coding</button>
+    <button class="btn" id="secret">#secret</button>
+  </div>
+
+
+
+  <!--chat list/window-->
+  <div class="chat-window">
+    <ul class="chat-list list-group"></ul>
+  </div>
+
+
+
+  <!--new chat form-->
+  <form class="new-chat my-3">
+    <div class="input-group">
+      <div class="input-group-prepend">
+        <div class="input-group-text">Your Message:</div>
+      </div>
+      <input type="text" id="message" class="form-control" required>
+      <div class="input-group-append">
+        <input type="submit" class="btn" value="SEND">
+      </div>
+    </div>
+  </form>
+
+
+
+  <!--update name form-->
+  <form class="new-name my-3">
+    <div class="input-group">
+      <div class="input-group-prepend">
+        <div class="input-group-text">Update Name:</div>
+      </div>
+      <input type="text" id="name" class="form-control" required>
+      <div class="input-group-append">
+        <input type="submit" class="btn" value="UPDATE">
+      </div>
+    </div>
+    <div class="update-mssg"></div>
+  </form>
+
+
+
+  <script src="http://cdn.date-fns.org/v1.9.0/date_fns.min.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.8.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.8.0/firebase-firestore.js"></script>
+  <script>
+
+    var firebaseConfig = {
+      apiKey: "AIzaSyDFaSxHuqUnc-2jOjbSu8SYsEiwlMgfiKQ",
+      authDomain: "web-chat-app-d5f63.firebaseapp.com",
+      projectId: "web-chat-app-d5f63",
+      storageBucket: "web-chat-app-d5f63.appspot.com",
+      messagingSenderId: "366353822981",
+      appId: "1:366353822981:web:d78c6bb6d45e13c709b36c",
+      measurementId: "G-HTNBQ3RNSW"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    const db = firebase.firestore();
+  </script>
+  <script src="chat.js"></script>
+  <script src="ui.js"></script>
+  <script src="app.js"></script>
+</body>
+
+</html>
